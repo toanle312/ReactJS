@@ -1,16 +1,46 @@
 // import './App.css';
-import { useState } from 'react';
-import Content from './Content';
+import { useState, useEffect, useRef } from 'react';
 
 
 function App() {
-  const [show, setShow] = useState(false);
+  const [count, setCount] = useState(60);
+  const [start, setStart] = useState(false);
+
+  const timerId = useRef();
+  const prevCount = useRef();
+  const h1Ref = useRef();
+
+  useEffect(() => {
+    prevCount.current = count;
+  }, [count]);
+
+  useEffect(() => {
+    console.log(h1Ref.current);
+  });
+
+  const handleStart = () => {
+    if(!start){
+      timerId.current = setInterval(() => {
+        setCount(prev => prev - 1);
+      }, 1000)
+      setStart(!start);
+    }
+  };
+  
+  const handleStop = () => {
+    if(start){
+      clearInterval(timerId.current);
+      setStart(!start);
+    }
+  };
+
+  console.log(count, prevCount.current);
 
   return (
     <div className="App" style={{padding: '20px'}}>
-    
-      <button onClick={() => setShow(!show)}>Toogle</button>
-      {show && <Content />}
+      <h1 ref={h1Ref}>{count}</h1>
+      <button onClick={handleStart} disabled={start}>Start</button>
+      <button onClick={handleStop} disabled={!start}>Stop</button>
     </div>
   );
 }
