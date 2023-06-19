@@ -1,52 +1,58 @@
 // import './App.css';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useMemo, useRef } from 'react';
 
 
 function App() {
-  const [count, setCount] = useState(60);
-  const [start, setStart] = useState(false);
+  const [name, setName] = useState('');
+  const [price, setPrice] = useState('');
+  const [products, setProducts] = useState([]);
 
-  const timerId = useRef();
-  const prevCount = useRef();
-  const h1Ref = useRef();
+  const nameRef = useRef();
 
-  useEffect(() => {
-    prevCount.current = count;
-  }, [count]);
+  const handleSubmit = () => {
+    setProducts([...products, {
+      name,
+      price: parseInt(price)
+    }]);
+    setName('');
+    setPrice('');
+    nameRef.current.focus();
+  }
+ 
+  const total = useMemo(() => {
+    const result =  products.reduce((result, product) => {
+      console.log('Calculating total');
+      return result + product.price;
+    }, 0)
 
-  useEffect(() => {
-    console.log(h1Ref.current);
-  });
-
-  const handleStart = () => {
-    if(!start){
-      timerId.current = setInterval(() => {
-        setCount(prev => {
-          if (prev > 0) {
-            return prev - 1;
-          }else{
-            return 60;
-          }
-        });
-      }, 1000)
-      setStart(!start);
-    }
-  };
-  
-  const handleStop = () => {
-    if(start){
-      clearInterval(timerId.current);
-      setStart(!start);
-    }
-  };
-
-  console.log(count, prevCount.current);
+    return result;
+  }, [products]);
 
   return (
     <div className="App" style={{padding: '20px'}}>
-      <h1 ref={h1Ref}>{count}</h1>
-      <button onClick={handleStart} disabled={start}>Start</button>
-      <button onClick={handleStop} disabled={!start}>Stop</button>
+      <input 
+        ref={nameRef}
+        value={name}
+        placeholder="Enter name"
+        onChange={e => setName(e.target.value)}
+      />
+      <br/>
+      <input 
+        value={price}
+        placeholder="Enter price"
+        onChange={e => setPrice(e.target.value)}
+      />
+      <br/>
+      <button
+        onClick={handleSubmit}
+      >Add</button>
+      <br/>
+      Total: {total}
+      <ul>
+        {products.map((product, index) => (
+          <li key={index}>{product.name} - {product.price}</li>
+        ))}
+      </ul>
     </div>
   );
 }
