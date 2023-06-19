@@ -45,7 +45,7 @@ const reducer = (state, action) => {
       };
     case DELETE_JOB:
       return {
-        ... state,
+        ...state,
         todoList: [...state.todoList].filter((todo, index) => index !== action.payload)
       }
     default:
