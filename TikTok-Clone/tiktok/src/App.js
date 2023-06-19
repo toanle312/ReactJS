@@ -21,7 +21,13 @@ function App() {
   const handleStart = () => {
     if(!start){
       timerId.current = setInterval(() => {
-        setCount(prev => prev - 1);
+        setCount(prev => {
+          if (prev > 0) {
+            return prev - 1;
+          }else{
+            return 60;
+          }
+        });
       }, 1000)
       setStart(!start);
     }
