@@ -6,8 +6,9 @@ import Clients from "./Clients";
 import CTA from "./CTA";
 import Stats from "./Stats";
 import Footer from "./Footer";
-import Testimonials from "./Testimonials";
+import Testimonials from "./Testimonials.js";
 import Hero from "./Hero";
+import GetStarted from "./GetStarted";
 
 export {
   Navbar,
@@ -20,4 +21,5 @@ export {
   Footer,
   Testimonials,
   Hero,
+  GetStarted
 };

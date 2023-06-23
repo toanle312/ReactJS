@@ -35,7 +35,7 @@ const Navbar = () => {
         <div
           className={`${toggle ? "flex" : "hidden"} 
           bg-black-gradient p-6 absolute right-0 top-20 
-          mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
+          mx-4 my-2 min-w-[140px] rounded-xl sidebar z-[10]`}
         >
           <ul className="list-none flex flex-col
           justify-center items-center flex-1">
