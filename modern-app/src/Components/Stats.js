@@ -7,7 +7,7 @@ const Stats = () => {
     flex-wrap flex-1 relative">
       {stats.map((stat, index) => (
         <div key={stat.id} className="flex flex-1 justify-start items-center p-4 flex-row
-        sm:mb-20 mb-6 relative">
+        sm:mb-20 mb-6 relative sm:ml-6 ml-0">
           <h4 className="font-poppins font-semibold text-white 
           xs:text-[40px] text-[30px] xs:leading-[53px] leading-[43px]
           mr-6"

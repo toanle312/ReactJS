@@ -9,6 +9,7 @@ import Footer from "./Footer";
 import Testimonials from "./Testimonials.js";
 import Hero from "./Hero";
 import GetStarted from "./GetStarted";
+import Button from "./Button";
 
 export {
   Navbar,
@@ -21,5 +22,6 @@ export {
   Footer,
   Testimonials,
   Hero,
-  GetStarted
+  GetStarted, 
+  Button
 };
