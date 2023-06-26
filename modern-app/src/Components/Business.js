@@ -29,18 +29,20 @@ const FeatureCard = ({icon, title, content, index}) => {
 
 const Business = () => {
   return (
-    <div className="flex flex-row">
+    <section id="features" className="flex sm:flex-row flex-col
+    justify-center items-center
+    md:mr-10 mr-0 md:mt-0 mt-10 relative sm:py-16 py-6">
       <div className="flex flex-col flex-1 justify-center items-start">
         <h1 className="font-poppins font-semibold text-white
         text-[48px] leading-[76.8px] mb-6">
-          You do the business,<br className="sm:block hidden"/>
+          You do the business,<br className="sm:block hidden"/> {" "}
           we'll handle the money.
         </h1>
         <p className="font-poppins font-normal text-dimWhite
         text-[18px] leading-[30.6px] max-w-[570px]">
           With the right credit card, you can improve your financial life by building credit, earning rewards and saving money. But with hundreds of credit cards on the market.
         </p>
-        <Button styles="mt-10"/>
+        <Button styles="mt-10 sm:mb-0 mb-10"/>
       </div>
 
       <div className="flex flex-col justify-center items-center flex-1">
@@ -53,7 +55,7 @@ const Business = () => {
         ))}
       </div>
       
-    </div>
+    </section>
   );
 }
 
