@@ -29,7 +29,7 @@ const CardDeal = () => {
           in few easy steps.
         </h1>
         <p className="font-poppins font-normal text-dimWhite
-        text-[18px] leading-[28.8px] max-w-[470px]">
+        text-[18px] leading-[28.8px] max-w-[500px]">
           Arcu tortor, purus in mattis at sed integer faucibus. Aliquet quis aliquet eget mauris tortor.ç Aliquet ultrices ac, ametau.
         </p>
         <Button styles="mt-10"/>
