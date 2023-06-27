@@ -6,7 +6,7 @@ const GetStarted = () => {
     <div className="justify-center 
     items-center bg-blue-gradient
     rounded-[50%] w-[140px] h-[140px]
-    p-[2px] cursor-pointer">
+    p-[2px] cursor-pointer button">
       <div className="bg-primary w-[100%] h-[100%]
       rounded-full flex flex-col justify-center 
       items-center">

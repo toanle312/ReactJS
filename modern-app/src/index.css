@@ -107,6 +107,20 @@
   }
 }
 
+.button:hover{
+  background: linear-gradient(
+    157.81deg,
+    #a5f6f9 -43.27%,
+    #91f9fd -21.24%,
+    #74f8fc 12.19%,
+    #30ebf1 29.82%,
+    #18e3ea 51.94%,
+    #04c4e1 90.29%
+  );
+  transform: translateX(5px);
+  transform: translateY(-5px);
+}
+
 .feature-card:hover {
   background: var(--black-gradient);
   box-shadow: var(--card-shadow);

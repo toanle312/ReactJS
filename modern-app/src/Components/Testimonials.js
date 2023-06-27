@@ -36,7 +36,7 @@ const FeedBackCard = ({id, name, content, title, img}) => {
 
 const Testimonials = () => {
   return (
-    <section id="product" className="flex flex-col justify-center items-center
+    <section id="clients" className="flex flex-col justify-center items-center
     sm:py-16 py-6 relative">
       <div className="absolute w-[60%] h-[120%] -right-[55%] blue__gradient rounded-full z-[0]"></div>
       <div className="w-full flex justify-between items-center md:flex-row flex-col sm:mb-16 mb-6 relative z-[1]">

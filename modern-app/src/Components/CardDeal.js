@@ -4,7 +4,7 @@ import Button from './Button';
 
 const CardDeal = () => {
   return (
-    <section id="product" className="flex sm:flex-row-reverse flex-col-reverse
+    <section className="flex sm:flex-row-reverse flex-col-reverse
     justify-center items-center sm:py-16 py-6">
       <div className="flex-1 md:mr-10 mr-0 md:mt-0 mt-10 relative">
         <img
